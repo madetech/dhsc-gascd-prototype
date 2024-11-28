@@ -1,2 +1,2 @@
-# dhsc-alpha-prototype
-Repository for the Prototyping Toolkit for DHSC DAP Delivery
+# dhsc-gascd-prototype
+Repository for the Prototyping Toolkit for DHSC GASCD Delivery
