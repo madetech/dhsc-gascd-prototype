@@ -8,6 +8,41 @@
  
       <h1>{{pageName}}</h1>
 
+      <!-- A few experiements with Nunjucks arrays -  -->
+{% set testItems =["works", "rocks"] %}
+<p>{{testItems}}</p>
+{% set testArray = {name:"Bobby", address:"rocks"} %}
+<p>{{testArray.name}}</p>
+
+
+{% set items = [{ title: "foo", id: 1 }, { title: "bar", id: 2}] %}
+<ul>
+  {% for item in items %}
+    <li>{{ item.title }}</li>
+  {% else %}
+    <li>This would display if the 'item' collection were empty</li>
+  {% endfor %}
+  {{items[0].title + " " + items[0].id}} 
+  </ul>
+
+  <!-- Add text to an SVG -->
+  <svg height="30" width="200" xmlns="http://www.w3.org/2000/svg">
+    <text x="5" y="15" fill="red">I love SVG! + {{testItems}}</text>
+  </svg> 
+
+  <!-- A loop which creates two SVGs from the array Items -->
+  {% for item in items %}
+  <svg height="30" width="200" xmlns="http://www.w3.org/2000/svg">
+    <text x="5" y="15" fill="red">I love SVG! + {{item.title}}</text>
+  </svg> 
+  {% endfor %}
+
+
+  {% for item in items %}
+  <svg height="30" width="200" xmlns="http://www.w3.org/2000/svg">
+    <text x="{{item.id}}" y="15" fill="red">I love SVG!</text>
+  </svg> 
+  {% endfor %}
 
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
