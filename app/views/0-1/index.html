@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<style>
+  #topNav {
+    margin:0 0 2em 0;
+    padding:0
+  }
+  #topNav p {
+    font-size: 1em;
+    margin-right: 1em;
+    display:inline;
+  }
+
+  #topNav li {
+    margin-right: 3.5em;
+    display:inline;
+    
+  }
+</style>
+<ul id="topNav">
+  <li><p>Home</p></li>
+  <li><a href="get-data">Get data</a></li>
+  <li><a href="data-sources">Data sources</a></li>
+</ul>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+   
+
+    <h1 class="govuk-heading-xl">
+      {{ pageName }}
+    </h1>
+    <p>Dashboard</p>
+
+
+{% endblock %}
