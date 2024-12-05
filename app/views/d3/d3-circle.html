@@ -5,6 +5,8 @@
 {% block content %}
 
       <h1>{{pageName}}</h1>
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
 
 <script>
 var data = {"children": [
@@ -54,7 +56,8 @@ d3.select("#demo1 g")
 </script>
 
 <svg id="demo1" width=260 height=260>
-  <g  transform="translate(5,5)"></g>
+  <text x="5" y="15" fill="red">SVG works, code doesn't</text>
+  <!-- <g  transform="translate(5,5)"></g> -->
 </svg>
 
 
