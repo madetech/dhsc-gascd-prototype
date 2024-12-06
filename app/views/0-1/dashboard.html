@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Your dashboard" %}
+
+{% block header %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{{ govukServiceNavigation({
+  serviceName: "Get adult social care data",
+  serviceUrl: "/",
+  navigation: [
+    {
+      href: "#",
+      text: "Home"
+    },
+    {
+      href: "get-data",
+      text: "Get data"
+    },
+    {
+      href: "#",
+      text: "Dashboards",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Help"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+   
+<p>Home > Your dashboards > Demand and capacity</p>
+    <h1 class="govuk-heading-xl">
+     Demand and capacity
+    </h1>
+    <p><strong>East of England care providers</strong></p>
+    <style>
+      .h1,h2,p{font-family: "GDS Transport", arial, sans-serif;}
+      .dashboard-tile{
+        background-color: #e1e1e1;
+        border:0.5em solid #FFF;
+      }
+    </style>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half dashboard-tile">
+        <h2>Future demand</h2>
+        <p>By care type - East of England region</p>
+        <p>[Show total]</p>
+        <p>[Map goes here]</p>
+      </div>
+      <div class="govuk-grid-column-one-half dashboard-tile">
+        <h2>Present demand</h2>
+        <p>Beds needed for East of England: Q1 2026</p>
+        <p>[Show total]</p>
+        <p>Unmet care packages</p>
+        <p>[Show total]</p>
+      </div>
+      <div class="govuk-grid-column-one-half dashboard-tile">
+        <h2>Current market</h2>
+      </div>
+      <div class="govuk-grid-column-one-half dashboard-tile">
+        <h2>Present demand</h2>
+      </div>
+    </div>
+
+
+{% endblock %}
