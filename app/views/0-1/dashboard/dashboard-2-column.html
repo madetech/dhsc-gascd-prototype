@@ -100,35 +100,27 @@
         border:0.5em solid #FFF;
       }
     </style>
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">Present demand in Ipswitch (ONS data)</caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Indicator</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">2025</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">2024</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">View</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Over 65+</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">123,456</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">122,399</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Living with disabilities</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">12,422</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">11,922</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Index of multiple deprivation</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric">1,833,231</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">1,942,948</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-        </tr>
-      </tbody>
-    </table>
+    
+      <div class="govuk-grid-column-one-half dashboard-tile">
+        <h2>Future demand</h2>
+        <p>By care type - East of England region</p>
+        <p>[Show total]</p>
+        <p>[Map goes here]</p>
+      </div>
+      <div class="govuk-grid-column-one-half dashboard-tile">
+        <h2>Present demand</h2>
+        <p>Beds needed for East of England: Q1 2026</p>
+        <p>[Show total]</p>
+        <p>Unmet care packages</p>
+        <p>[Show total]</p>
+      </div>
+      <div class="govuk-grid-column-one-half dashboard-tile">
+        <h2>Current market</h2>
+      </div>
+      <div class="govuk-grid-column-one-half dashboard-tile">
+        <h2>Present demand</h2>
+      </div>
+    </div>
+
+
 {% endblock %}
