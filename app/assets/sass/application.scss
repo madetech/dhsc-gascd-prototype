@@ -5,3 +5,13 @@
 
 // Add extra styles here
 @import "node_modules/govuk-frontend/dist/govuk/index";
+
+h1,h2,h3,p,ul,ol{
+    font-family: "GDS Transport", arial, sans-serif;
+}
+
+p,ul,ol{
+    font-size: 1.1875rem;
+    line-height: 1.3157894737;
+    color: #0b0c0c
+}
