@@ -58,11 +58,41 @@
 {% block content %}
 <a href="#" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-one-third">
+        <nav class="moj-side-navigation" aria-label="Side navigation">
+          <ul class="moj-side-navigation__list">
+            <li class="moj-side-navigation__item moj-side-navigation__item--active">
+              <a href="#1" aria-current="location">Demand and capacity</a>
+            </li>
+    
+            <li class="moj-side-navigation__item">
+              <a href="#2">Prevention</a>
+            </li>
+    
+            <li class="moj-side-navigation__item">
+              <a href="#3">Hospital discharge</a>
+            </li>
+
+            <li class="moj-side-navigation__item">
+              <a href="#3">Workforce</a>
+            </li>
+
+            <li class="moj-side-navigation__item">
+              <a href="#3">Finance</a>
+            </li>
+
+            <li class="moj-side-navigation__item">
+              <a href="#3">Care pathways</a>
+            </li>
+          </ul>
+        </nav>
+    </div>
+  <div class="govuk-grid-column-two-thirds">
+    
     <h1 class="govuk-heading-xl">
      Demand and capacity
     </h1>
-    <p style="padding:0.5em; border: 1px solid #e1e1e1; background-color: #f3f2f1;">You're viewing data for <strong>Ipswitch | nursing homes</strong>. <a href="#" style="float:right">Change</a></p>
+    <p style="padding:0.5em; border: 1px solid #e1e1e1; background-color: #f3f2f1;">You're viewing data for <strong>Ipswitch care providers</strong>. <a href="#" style="float:right">Change</a></p>
     <style>
       .h1,h2,p{font-family: "GDS Transport", arial, sans-serif;}
       .dashboard-tile{
@@ -74,19 +104,34 @@
       Present demand in Ipswitch
     </h2>
      <p>Source: ONS data</p>
-     {% from "govuk/components/button/macro.njk" import govukButton %}
-    
-    </div>
-    <script src="https://d3js.org/d3.v4.js"></script>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">
-        
-        {% include "./age1.html" %}
-        
-      </div>
-      <div class="govuk-grid-column-one-half">
-        {% include "./age2.html" %}
-      </div>
-
-    </div>
+    <table class="govuk-table">  
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Indicator</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">2025</th>
+          <!-- <th scope="col" class="govuk-table__header govuk-table__header--numeric">2024</th> -->
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Details</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Over 65+</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">123,456</td>
+          <!-- <td class="govuk-table__cell govuk-table__cell--numeric">122,399</td> -->
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Living with disabilities</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">12,422</td>
+          <!-- <td class="govuk-table__cell govuk-table__cell--numeric">11,922</td> -->
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Index of multiple deprivation</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric">1,833,231</td>
+          <!-- <td class="govuk-table__cell govuk-table__cell--numeric">1,942,948</td> -->
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+      </tbody>
+    </table>
 {% endblock %}
