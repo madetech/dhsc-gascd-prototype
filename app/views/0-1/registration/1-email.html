@@ -15,22 +15,22 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="check-answers" method="post">
+      <h1 class="govuk-heading-xl">Register to access adult social care data</h1>
 
-
+      <form class="form" action="2-confirm-code" method="post">
+       
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           label: {
-            text: "Password",
-            classes: "govuk-label--l",
-            isPageHeading: true
+            text: "Enter your email address",
+            classes: "govuk-label--l"
           },
-          
-          id: "password",
-          name: "password",
-          type: "password",
-          class: "govuk-input--width-20",
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          classes: "govuk-input--width-20",
           spellcheck: false
         }) }}
        

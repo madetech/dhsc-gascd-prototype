@@ -15,16 +15,18 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Sign in</h1>
-      <form class="form" action="3-password" method="post">
+      <h1 class="govuk-heading-xl">Enter code to confirm your email address</h1>
+      <p>We have sent a code to <strong>pavindersingh@greenfields.co.uk</strong></p>
+      <p>The email contains a 6-digit security code. The code expires after 15 minutes.</p>
 
-
+      <form class="form" action="3-your-details" method="post">
+       
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           label: {
-            text: "Email address",
-            classes: "govuk-label--l"
+            text: "Enter the 6-digit code",
+            classes: "govuk-label--s"
           },
           
           id: "email",
@@ -34,8 +36,16 @@
           class: "govuk-input--width-20",
           spellcheck: false
         }) }}
-        <h2>Problems signing in</h2>
-        <p><a href="10-forgotten-details">I have forgotten my details</a></p>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I did not receive the code
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           tbc          </div>
+        </details>
        
 {{ govukButton({
   text: "Continue"
