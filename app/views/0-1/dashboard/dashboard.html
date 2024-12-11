@@ -82,14 +82,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-width-container">
       <div class="govuk-grid-column-one-third">
+        <h3>Line chart</h3>
         {% include "./line-chart.html" %}
       </div>
       <div class="govuk-grid-column-one-third">
+        <h3>Bar chart</h3>
         {% include "./bar-chart.html" %}
       </div>
       <div class="govuk-grid-column-one-third">
-        <h3>Index of Multiple Deprivation</h3>
-        <img src="/public/images/leicester.png" style="width:100%">
+        <h3>Stacked chart</h3>
+        {% include "./stacked-chart.html" %}
       </div>
     </div>
   </div>
@@ -100,66 +102,66 @@
       </h2>
       <div class="govuk-width-container">
         <div class="govuk-grid-column-one-half">
-       
+          
           <p></p>
           {% from "govuk/components/table/macro.njk" import govukTable %}
-
-{{ govukTable({
-  caption: "Ipswitch care home services with nursing (CHN)",
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: true,
-  head: [
-    {
-      text: "Type"
-    },
-    {
-      text: "People in care",
-      classes: "govuk-!-text-align-right"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "Nursing homes"
-      },
-      {
-        text: "12,345",
-        classes: "govuk-!-text-align-right"
-      }
-    ],
-    [
-      {
-        text: "Convalescent homes with nursing"
-      },
-      {
-        text: "2,134",
-        classes: "govuk-!-text-align-right"
-      }
-    ],
-    [
-      {
-        text: "Respite care with nursing"
-      },
-      {
-        text: "5,324",
-        classes: "govuk-!-text-align-right"
-      }
-    ],
-    [
-      {
-        text: "Mental health crisis houses with nursing"
-      },
-      {
-        text: "498",
-        classes: "govuk-!-text-align-right"
-      }
-    ]
-  ]
-}) }}
+          
+          {{ govukTable({
+            caption: "Ipswitch care home services with nursing (CHN)",
+            captionClasses: "govuk-table__caption--m",
+            firstCellIsHeader: false,
+            head: [
+            {
+              text: "Type"
+            },
+            {
+              text: "People in care",
+              classes: "govuk-!-text-align-right"
+            }
+            ],
+            rows: [
+            [
+            {
+              text: "Nursing homes"
+            },
+            {
+              text: "12,345",
+              classes: "govuk-!-text-align-right"
+            }
+            ],
+            [
+            {
+              text: "Convalescent homes with nursing"
+            },
+            {
+              text: "2,134",
+              classes: "govuk-!-text-align-right"
+            }
+            ],
+            [
+            {
+              text: "Respite care with nursing"
+            },
+            {
+              text: "5,324",
+              classes: "govuk-!-text-align-right"
+            }
+            ],
+            [
+            {
+              text: "Mental health crisis houses with nursing"
+            },
+            {
+              text: "498",
+              classes: "govuk-!-text-align-right"
+            }
+            ]
+            ]
+          }) }}
         </div>
         <div class="govuk-grid-column-one-half">
-            <h3>Index of Multiple Deprivation</h3>
-            <img src="/public/images/leicester.png" style="width:100%">
+          <h3>Index of Multiple Deprivation</h3>
+          <img src="/public/images/leicester.png" style="width:100%">
         </div>
       </div>
     </div>
