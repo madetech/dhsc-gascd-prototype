@@ -15,7 +15,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Sign in</h1>
+      <!-- <h1 class="govuk-heading-xl">Sign in</h1> -->
       <form class="form" action="3-password" method="post">
 
 
@@ -23,19 +23,17 @@
 
         {{ govukInput({
           label: {
-            text: "Email address",
-            classes: "govuk-label--l"
+            text: "What is your email address?",
+            classes: "govuk-label--xl"
           },
           
           id: "email",
           name: "email",
           type: "email",
           autocomplete: "email",
-          class: "govuk-input--width-20",
+          classes: "govuk-input--width-20",
           spellcheck: false
         }) }}
-        <h2>Problems signing in</h2>
-        <p><a href="10-forgotten-details">I have forgotten my details</a></p>
        
 {{ govukButton({
   text: "Continue"
