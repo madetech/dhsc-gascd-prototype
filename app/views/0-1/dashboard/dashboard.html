@@ -93,71 +93,46 @@
         <h3>Stacked chart</h3>
         {% include "./stacked-chart.html" %}
       </div>
-    </div>
-  </div>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
       <h2>
         Current market
       </h2>
+      <style>
+        .table-amount{border-top:0.5em solid gold;margin:0}
+      </style>
       <div class="govuk-width-container">
         <div class="govuk-grid-column-one-half">
           
-          <p></p>
-          {% from "govuk/components/table/macro.njk" import govukTable %}
-          
-          {{ govukTable({
-            caption: "Ipswitch care home services with nursing (CHN)",
-            captionClasses: "govuk-table__caption--m",
-            firstCellIsHeader: false,
-            head: [
-            {
-              text: "Type"
-            },
-            {
-              text: "People in care",
-              classes: "govuk-!-text-align-right"
-            }
-            ],
-            rows: [
-            [
-            {
-              text: "Nursing homes"
-            },
-            {
-              text: "12,345",
-              classes: "govuk-!-text-align-right"
-            }
-            ],
-            [
-            {
-              text: "Convalescent homes with nursing"
-            },
-            {
-              text: "2,134",
-              classes: "govuk-!-text-align-right"
-            }
-            ],
-            [
-            {
-              text: "Respite care with nursing"
-            },
-            {
-              text: "5,324",
-              classes: "govuk-!-text-align-right"
-            }
-            ],
-            [
-            {
-              text: "Mental health crisis houses with nursing"
-            },
-            {
-              text: "498",
-              classes: "govuk-!-text-align-right"
-            }
-            ]
-            ]
-          }) }}
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Ipswitch care home services with nursing (CHN)</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Type</th>
+                <th scope="col" class="govuk-table__header govuk-!-text-align-right">People in care</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Nursing homes</th>
+                <td class="govuk-table__cell govuk-!-text-align-right"><p>12,345</p><span class="table-amount" style="padding-left:6em"></span></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Convalescent homes with nursing</th>
+                <td class="govuk-table__cell govuk-!-text-align-right"><p>4,347</p><span class="table-amount" style="padding-left:4em"></span></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Convalescent homes with nursing</th>
+                <td class="govuk-table__cell govuk-!-text-align-right"><p>986</p><span class="table-amount" style="padding-left:1em"></span></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Respite care with nursing</th>
+                <td class="govuk-table__cell govuk-!-text-align-right"><p>921</p><span class="table-amount" style="padding-left:1em"></span></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Mental health crisis houses with nursing</th>
+                <td class="govuk-table__cell govuk-!-text-align-right"><p>743</p><span class="table-amount" style="padding-left:0.7em"></span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div class="govuk-grid-column-one-half">
           <h3>Index of Multiple Deprivation</h3>
