@@ -50,6 +50,7 @@ Curve
 -->
 <p>Curve, using data definied within the script:</p>
 <div id="curve"></div>
+<div id="rect"></div>
 <script>
   // create data
 var data = [{x: 0, y: 20}, {x: 150, y: 150}, {x: 300, y: 100}, {x: 450, y: 20}, {x: 600, y: 130}]
@@ -68,6 +69,17 @@ svg.append('path')
   .attr('d', curveFunc(data))
   .attr('stroke', 'black')
   .attr('fill', 'none');
+
+  //Second svg
+  // create svg element:
+  var svg = d3.select("#rect").append("svg").attr("width", 800).attr("height", 200)
+
+  svg.append('rect')
+  .attr('x',curveFunc(data))
+  .attr('y',10)
+  .attr('width',10)
+  .attr('height',10)
+
 </script>
 
 <!-- 
