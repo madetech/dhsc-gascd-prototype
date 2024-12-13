@@ -1,14 +1,24 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="D3 example" %}
+{% set pageName="D3 sandpit" %}
 
 {% block content %}
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v4.js"></script>
  
       <h1>{{pageName}}</h1>
-
-
+<p>A selection of simple D3 charts</p>
+<ul>
+  <li>
+    <a href="d3-line">Line chart</a>
+  </li>
+  <li>
+    <a href="d3-simple">Simple circles and curves</a>
+  </li>
+  <li>
+    <a href="chart">Chart.js example</a>
+  </li>
+</ul>
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
 
