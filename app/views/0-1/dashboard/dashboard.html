@@ -25,7 +25,7 @@
     <a href="#" class="govuk-header__link govuk-header__service-name">
       {{serviceName}}
     </a>
-    <p style="float:right"><a href="#" style="color:white; text-decoration:none">Welcome, Pavinder</a></p>
+    <p style="float:right"><a href="#" style="color:white; text-decoration:none">Manage account | Sign out</a></p>
     
   </div>
 </div>
@@ -82,19 +82,111 @@
       Visit dashboards
     </button>
   </div> -->
-  <p style="padding:0.5em; border: 1px solid #e1e1e1; background-color: #f3f2f1;">You're viewing data for <strong>Ipswitch | nursing homes | 2025</strong>. <a href="#" style="float:right">Change</a></p>
+  <p style="padding:0.5em; border: 1px solid #e1e1e1; background-color: #f3f2f1;">You're viewing data for <strong>Suffolk | nursing homes</strong><a href="#" style="float:right">Change</a></p>
  
   <style>
-    .h1,h2,p{font-family: "GDS Transport", arial, sans-serif;}
+    h1,h2,h3,p{font-family: "GDS Transport", arial, sans-serif;}
+    h3{font-size:1.6em}
     .dashboard-tile{
       background-color: #e1e1e1;
       border:0.5em solid #FFF;
     }
+    .govuk-summary-list__key{
+      font-weight: normal;
+    }
+    .govuk-summary-list__value{
+      text-align:right
+    }
+    .govuk-grid-column-one-half{
+      padding:0 5em 0 0em
+    }
   </style>
-  <h2>
+  <h2 class="govuk-heading-l">
     Present demand
   </h2>
-    
+
+  <div class="govuk-width-container">
+    <div class="govuk-grid-column-one-half">
+      <h3>Total beds versus total beds occupied</h3>
+      <p>Source: Adult social care in England, monthly statistics: December 2024 
+      </p>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            Date range
+          </dt>
+          <dd class="govuk-summary-list__value">
+            2021 - 2023
+          </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">
+              Care provider type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Nursing home
+            </dd>
+            </div>
+            </dl>
+      <p><a href="#">View data</a></p>
+      {% include "./beds-line-chart.html" %}
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <h3>Suffolk nursing homes: CQC ratings</h3>
+        <p>Source: CQC data</p>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">
+              Outstanding
+            </dt>
+            <dd class="govuk-summary-list__value">
+             15
+            </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                Good
+              </dt>
+              <dd class="govuk-summary-list__value">
+               36
+              </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                  Requires improvement
+                </dt>
+                <dd class="govuk-summary-list__value">
+                 2
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                    Inadequate
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                   1
+                  </dd>
+                  </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                Total
+              </dt>
+              <dd class="govuk-summary-list__value">
+               54
+              </dd>
+              </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                Rating for Suffolk
+              </dt>
+              <dd class="govuk-summary-list__value">
+               Good
+              </dd>
+              </div>
+              </dl>
+      </div>
+      </div>
   </div>
 
   {% endblock %}
