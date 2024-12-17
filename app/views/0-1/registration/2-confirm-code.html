@@ -1,8 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+{% set titleH1 = "Enter code to confirm your email address" %} {% block pageTitle %} {{titleH1}} - {{serviceName}} - GOV.UK {% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -15,26 +13,21 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Enter code to confirm your email address</h1>
+      <h1 class="govuk-heading-l">Enter code to confirm your email address</h1>
       <p>We have sent a code to <strong>pavindersingh@greenfields.co.uk</strong></p>
       <p>The email contains a 6-digit security code. The code expires after 15 minutes.</p>
 
-      <form class="form" action="3-your-details" method="post">
+      <form class="form" action="3-your-name" method="post">
        
         {% from "govuk/components/input/macro.njk" import govukInput %}
 
         {{ govukInput({
           label: {
-            text: "Enter the 6-digit code",
-            classes: "govuk-label--s"
+            text: "Enter the 6 digit code"
           },
-          
-          id: "email",
-          name: "email",
-          type: "email",
-          autocomplete: "email",
-          class: "govuk-input--width-20",
-          spellcheck: false
+          classes: "govuk-input--width-10",
+          id: "width-10",
+          name: "width10"
         }) }}
 
         <details class="govuk-details">
@@ -44,7 +37,13 @@
             </span>
           </summary>
           <div class="govuk-details__text">
-           tbc          </div>
+            <p class="govuk-body">
+           The email may take a few minutes to arrive. The subject of the email is 'DHSC security code'.
+            </p>
+            <p class="govuk-body"></p>
+            If you still have not got the email, check your spam or junk mail folder. If it is not there, we can <a class="govuk-link" href="2-confirm-code">send the code again</a>.
+             </p>
+          </div>
         </details>
        
 {{ govukButton({
