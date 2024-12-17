@@ -94,9 +94,6 @@
     .govuk-summary-list__key{
       font-weight: normal;
     }
-    .govuk-summary-list__value{
-      text-align:right
-    }
     .govuk-grid-column-one-half{
       padding:0 5em 0 0em
     }
@@ -138,52 +135,7 @@
         <h3>Suffolk nursing homes: CQC ratings</h3>
         <p>Source: CQC data</p>
         <p><a href="#">View data</a></p>
-        <style>
-          .table-amount{margin-left:1em;background-color:gold}
-        </style>
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half">
-              Outstanding
-            </dt>
-            <dd class="govuk-summary-list__value">
-             15 <span class="table-amount" style="padding-left:3em;border-right:3em solid white"></span>
-            </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key govuk-!-width-one-half">
-                Good
-              </dt>
-              <dd class="govuk-summary-list__value">
-               36 <span class="table-amount" style="padding-left:6em"></span>
-              </dd>
-
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-half">
-                  Requires improvement
-                </dt>
-                <dd class="govuk-summary-list__value">
-                 2 <span class="table-amount" style="padding-left:0.2em;border-right:6em solid white"></span>
-                </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-half">
-                    Inadequate
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                   1 <span class="table-amount" style="padding-left:0.1em;border-right:6em solid white"></span>
-                  </dd>
-                  </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key govuk-!-width-one-half">
-                Total
-              </dt>
-              <dd class="govuk-summary-list__value">
-               54 <span class="table-amount" style="border-right:6em solid white"></span>
-              </dd>
-              </div>
-              </dl>
+      {% include "./cqc-rating.html" %}
       </div>
       </div>
   </div>
