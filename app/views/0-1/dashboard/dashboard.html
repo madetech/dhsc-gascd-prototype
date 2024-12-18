@@ -82,8 +82,8 @@
       Visit dashboards
     </button>
   </div> -->
-  <p style="padding:0.5em; border: 1px solid #e1e1e1; background-color: #f3f2f1;">You're viewing data for <strong>Suffolk | nursing homes | 2021-2023</strong><a href="#" style="float:right">Change</a></p>
- 
+  <!-- <p style="padding:0.5em; border: 1px solid #e1e1e1; background-color: #f3f2f1;">You're viewing data for <strong>Suffolk | nursing homes | 2021-2023</strong><a href="#" style="float:right">Change</a></p>
+  -->
   <style>
     h1,h2,h3,p{font-family: "GDS Transport", arial, sans-serif;}
     h3{font-size:1.6em}
@@ -94,22 +94,20 @@
     .govuk-summary-list__key{
       font-weight: normal;
     }
-    .govuk-summary-list__value{
-      text-align:right
-    }
     .govuk-grid-column-one-half{
       padding:0 5em 0 0em
     }
   </style>
-  <h2 class="govuk-heading-l">
+  <!-- <h2 class="govuk-heading-l">
     Present demand
-  </h2>
+  </h2> -->
 
   <div class="govuk-width-container">
     <div class="govuk-grid-column-one-half">
       <h3>Total beds versus occupied beds</h3>
-      <p>Source: Adult social care in England, monthly statistics: December 2024 
-      </p>
+      <p>Tags: Capacity planning</p>
+      <!-- <p>Source: Adult social care in England, monthly statistics: December 2024 
+      </p> -->
       <!-- <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-half">
@@ -128,62 +126,23 @@
             </dd>
             </div> 
             </dl>-->
-            <p><a href="total-beds">View data</a></p>
+            
             <p><span style="background-color:green; padding:0 0.25em; margin-right: 1em"> </span>Total beds</p>
             <p><span style="background-color:red; padding:0 0.25em; margin-right: 1em"> </span>Occupied beds</p>
       
       {% include "./beds-line-chart.html" %}
+      <a href="total-beds"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        View data
+       </button></a>
       </div>
       <div class="govuk-grid-column-one-half">
         <h3>Suffolk nursing homes: CQC ratings</h3>
-        <p>Source: CQC data</p>
-        <p><a href="#">View data</a></p>
-        <style>
-          .table-amount{margin-left:1em;background-color:gold}
-        </style>
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-width-one-half">
-              Outstanding
-            </dt>
-            <dd class="govuk-summary-list__value">
-             15 <span class="table-amount" style="padding-left:3em;border-right:3em solid white"></span>
-            </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key govuk-!-width-one-half">
-                Good
-              </dt>
-              <dd class="govuk-summary-list__value">
-               36 <span class="table-amount" style="padding-left:6em"></span>
-              </dd>
-
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-half">
-                  Requires improvement
-                </dt>
-                <dd class="govuk-summary-list__value">
-                 2 <span class="table-amount" style="padding-left:0.2em;border-right:6em solid white"></span>
-                </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key govuk-!-width-one-half">
-                    Inadequate
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                   1 <span class="table-amount" style="padding-left:0.1em;border-right:6em solid white"></span>
-                  </dd>
-                  </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key govuk-!-width-one-half">
-                Total
-              </dt>
-              <dd class="govuk-summary-list__value">
-               54 <span class="table-amount" style="border-right:6em solid white"></span>
-              </dd>
-              </div>
-              </dl>
+        <p>Tags: Quality of care</p>
+        <!-- <p>Source: CQC data</p> -->
+      {% include "./cqc-rating.html" %}
+      <a href="total-beds"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        View data
+       </button></a>
       </div>
       </div>
   </div>

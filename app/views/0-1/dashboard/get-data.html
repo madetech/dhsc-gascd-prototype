@@ -74,20 +74,21 @@
       Get data
     </h1>
   {% set queries = [
-    { date: "1 April", query:"Capacity where number of beds is greater than 5", user: "Made by you", datasets: "Occupancy visiting workforce" },
-    { date: "30 March", query:"Suffolk nursing homes: CQC ratings", user: "Made by you", datasets: "CQC ratings" }, 
-    { date: "29 March", query:"Capacity where Number of Beds (vacant) accepting admissions is greater than 10", user: "Made by you", datasets: "Occupancy visiting workforce" }, 
-    { date: "29 March", query:"Number of directly employed registered nurses absent, not COVID-19 related", user: "Template", datasets: "Occupancy visiting workforce" },
-    { date: "28 March", query:"Total headcount of directly employed registered nurses", user: "Made by you", datasets: "Occupancy visiting workforce" }, 
-    { date: "25 March", query:"Capacity where number of beds is greater than 5", user: "Template", datasets: "Occupancy visiting workforce"},
-    { date: "25 March", query:"Capacity where number of beds is greater than 5", user: "Made by you", datasets: "Occupancy visiting workforce" }, 
-    { date: "24 March", query:"Capacity where number of beds is greater than 5", user: "Made by you" , datasets: "Occupancy visiting workforce"}
+    { date: "1 April", query:"Capacity where number of beds is greater than 5", user: "Made by you", tags:"Capacity planning", datasets: "Occupancy visiting workforce" },
+    { date: "30 March", query:"Suffolk nursing homes: CQC ratings", user: "Made by you", tags:"Quality of care", datasets: "CQC ratings" }, 
+    { date: "29 March", query:"Capacity where Number of Beds (vacant) accepting admissions is greater than 10", user: "Made by you", tags:"Capacity planning", datasets: "Occupancy visiting workforce" }, 
+    { date: "29 March", query:"Number of directly employed registered nurses absent, not COVID-19 related", user: "Template", tags:"Capacity planning", datasets: "Occupancy visiting workforce" },
+    { date: "28 March", query:"Total headcount of directly employed registered nurses", user: "Made by you", tags:"Capacity planning",datasets: "Occupancy visiting workforce" }, 
+    { date: "25 March", query:"Capacity where number of beds is greater than 5", user: "Template", tags:"Capacity planning", datasets: "Occupancy visiting workforce"},
+    { date: "25 March", query:"Capacity where number of beds is greater than 5", user: "Made by you", tags:"Capacity planning", datasets: "Occupancy visiting workforce" }, 
+    { date: "24 March", query:"Capacity where number of beds is greater than 5", user: "Made by you" , tags:"Capacity planning", datasets: "Occupancy visiting workforce"}
   ] %}
 
   <p>Browse queries and build your own.</p>
   <button type="submit" class="govuk-button" data-module="govuk-button">
     New query
   </button>
+
   <style>
     
 table {
@@ -150,11 +151,12 @@ border: none;
     <input class="search-queries-input " type="text" id="first-name" name="first-name">
   </fieldset>
   <table class="companies-table">
-    <caption>Queries</caption>
+    <caption>All queries</caption>
     <tr>
       <th scope="col"><i class="fa-solid fa-chevron-down"></i>Last updated</th>
       <th scope="col">Name</th>
       <th scope="col">Type</th>
+      <th scope="col">Tags</th>
       <th scope="col">Datasets</th>
       <th scope="col">View / edit</th>
     </tr>
@@ -165,6 +167,7 @@ border: none;
         <td>{{ item.date }}</td>
         <td>{{ item.query }}</td>
         <td>{{ item.user }}</td>
+        <td>{{ item.tags }}</td>
         <td>{{ item.datasets }}</td>
         <td><a href="#">Open</a></td>
       </tr>
