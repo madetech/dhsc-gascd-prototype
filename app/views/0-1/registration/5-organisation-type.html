@@ -1,8 +1,7 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+{% set titleH1 = "What is your organisation type?" %} {% block pageTitle %} {{titleH1}} - {{serviceName}} - GOV.UK {% endblock %}
+
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -16,11 +15,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="5-create-password" method="post">
+      <form class="form" action="6-organisation-name" method="post">
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
         {{ govukRadios({
-          name: "whereDoYouLive",
+          name: "orgType",
+          value: data['orgType'],
           fieldset: {
             legend: {
               text: "What is your organisation type?",
@@ -38,12 +38,16 @@
               text: "Care provider"
             },
             {
-              value: "Government department or other body",
-              text: "Government department or other body"
+              value: "Government department or other public body",
+              text: "Government department or other public body"
             },
             {
               value: "Local authority",
               text: "Local authority"
+            },
+            {
+              value: "Membership organisation",
+              text: "Membership organisation"
             },
             {
               value: "NHS",
