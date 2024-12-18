@@ -50,12 +50,12 @@
   },
   {
     href: "get-data",
-    text: "Get data",
-    active: true
+    text: "Get data"
   },
   {
-    href: "dashboard",
-    text: "Your dashboard"
+    href: "#",
+    text: "Your dashboard",
+    active: true
   },
   {
     href: "#",
@@ -66,143 +66,85 @@
 {% endblock %}
 
 {% block content %}
+
+<!-- <a href="#" class="govuk-back-link">Back</a> -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+    <!-- <a href="#" class="govuk-back-link">Back</a> -->
     <h1 class="govuk-heading-xl">
-      Get data
+      Capacity and planning
     </h1>
-    
-    <style>
-      table {
-        margin: 2em 0;
-        text-align: left;
-        vertical-align: top;
-        border-collapse: collapse;
-        font-family: "GDS Transport", arial, sans-serif;
-      }
+
+   <!-- <div class="govuk-button-group">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Explore data
+    </button>
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Visit dashboards
+    </button>
+  </div> -->
+  <!-- <p style="padding:0.5em; border: 1px solid #e1e1e1; background-color: #f3f2f1;">You're viewing data for <strong>Suffolk | nursing homes | 2021-2023</strong><a href="#" style="float:right">Change</a></p>
+  -->
+  <style>
+    h1,h2,h3,p{font-family: "GDS Transport", arial, sans-serif;}
+    h3{font-size:1.6em}
+    .dashboard-tile{
+      background-color: #e1e1e1;
+      border:0.5em solid #FFF;
+    }
+    .govuk-summary-list__key{
+      font-weight: normal;
+    }
+    .govuk-grid-column-one-half{
+      padding:0 5em 0 0em
+    }
+  </style>
+  <h2 class="govuk-heading-l">
+    Present demand
+  </h2>
+
+  <div class="govuk-width-container">
+    <div class="govuk-grid-column-one-half">
+      <h3>Total beds versus occupied beds</h3>
+      <!-- <p>Source: Adult social care in England, monthly statistics: December 2024 
+      </p> -->
+      <!-- <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            Date range
+          </dt>
+          <dd class="govuk-summary-list__value">
+            2021 - 2023
+          </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">
+              Care provider type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Nursing home
+            </dd>
+            </div> 
+            </dl>-->
+            
+            <p><span style="background-color:green; padding:0 0.25em; margin-right: 1em"> </span>Total beds</p>
+            <p><span style="background-color:red; padding:0 0.25em; margin-right: 1em"> </span>Occupied beds</p>
       
-      .companies-table{
-        display:block;
-        min-width:600px
-      }
-      
-      caption {
-        text-align: left;
-        font-size: 1.4em;
-      }
-      
-      th,
-      td {
-        /*   border: 1px solid #666; */
-        padding: 1em;
-      }
-      
-      th {
-        background-color: #acbcd5;
-        /*     #a15dbc; */
-        color: #000;
-        font-weight: normal;
-      }
-      
-      tr{box-shadow: 0 3px 3px rgb(0 0 0 / 0.1);}
-      
-      tr:hover {
-        text-decoration: underline;
-      }
-      
-      tr:nth-child(odd) {
-        background-color: #fff;
-      }
-      
-      tr:nth-child(even) {
-        background-color: #f2f2f2;
-      } 
-      
-      #search-queries{
-        font-family: "GDS Transport", arial, sans-serif;
-        border: none;
-        margin-bottom:1.5em
-      }
-      
-      .search-queries-label{display: block;}
-      
-      .search-queries-input{padding:1em; margin-top:0.5em; width: 40em; border-radius: 5px;}
-      
-      .govuk-grid-column-one-half{
-        background: #f3f2f1;
-        border:0.5em solid white
-      }
-    </style>
-    
-    <!-- 
-    
-    Search box 
-    
-    -->
-    <!-- <fieldset id="search-queries">
-      <label class="search-queries-label" for="first-name"><h3>Search indicators</h3><p>By name, filter or dataset</p></label>
-      <input class="search-queries-input " type="text" id="first-name" name="first-name">
-    </fieldset> -->
-    
-    <!-- 
-    
-    Topics 
-    
-    -->
-    <h2>Topics</h2>
-    <p>Explore a range of indicators across different topics, or <a href="indicators">view all indicators</a>.
-    </p>
-    <div class="govuk-grid-row">
-      <a href="capacity">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Demand and capacity
-        </h2>
-        <p>
-          Track demand for adult social care services and how well those needs are being met.
-        </p>
+      {% include "./beds-line-chart.html" %}
+      <a href="total-beds"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        View data
+       </button></a>
       </div>
-    </a>
-    <a href="#">
       <div class="govuk-grid-column-one-half">
-        <h2>
-          Care quality and improvement
-        </h2>
-        <p>
-          Focuses on evaluating service quality and efforts to improve care outcomes and standards.
-        </p>
+        <h3>Suffolk nursing homes: CQC ratings</h3>
+        <!-- <p>Source: CQC data</p> -->
+      {% include "./cqc-rating.html" %}
+      <a href="total-beds"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        View data
+       </button></a>
       </div>
-    </a>
-    <a href="#">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Finance and economy
-        </h2>
-        <p>
-          Find data on funding, spending patterns, and economic factors impacting adult social care delivery.
-        </p>
       </div>
-      </a>
-      <a href="#">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Workforce
-        </h2>
-        <p>
-          Explore staffing trends and challenges within the adult social care sector.
-        </p>
-      </div>
-      </a>
-      <a href="#">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Market sustainability
-        </h2>
-        <p>
-          Data on the stability and resilience of the care provider market, and factors affecting long-term viability.  
-        </p>
-      </div>
-      </a>
-    </div>
-    {% endblock %}
-    
+  </div>
+
+  {% endblock %}
+  
