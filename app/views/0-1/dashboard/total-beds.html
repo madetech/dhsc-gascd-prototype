@@ -73,12 +73,22 @@
     <h1 class="govuk-heading-xl">
       Total beds versus occupied beds
     </h1>
+    <p>This is template query. Save a copy to edit it.</p>
+    <form action ="save-query">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Save a copy
+    </button>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              Show the output on your dashboard
+            </label>
+          </div>
+        </div>
 
-  <p>This is template query. Save a copy to edit it.</p>
-  <form action ="save-query">
-  <button type="submit" class="govuk-button" data-module="govuk-button">
-    Save a copy
-  </button>
 </form>
 <h2>Query details</h2>
     <dl class="govuk-summary-list">
@@ -88,6 +98,17 @@
     </dt>
     <dd class="govuk-summary-list__value">
       <a href="#">Adult social care in England, monthly statistic</a>
+    </dd>
+    <!-- <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd> -->
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Tags
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Capacity planning
     </dd>
     <!-- <dd class="govuk-summary-list__actions">
       <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>

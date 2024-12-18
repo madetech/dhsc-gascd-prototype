@@ -82,8 +82,8 @@
       Visit dashboards
     </button>
   </div> -->
-  <p style="padding:0.5em; border: 1px solid #e1e1e1; background-color: #f3f2f1;">You're viewing data for <strong>Suffolk | nursing homes | 2021-2023</strong><a href="#" style="float:right">Change</a></p>
- 
+  <!-- <p style="padding:0.5em; border: 1px solid #e1e1e1; background-color: #f3f2f1;">You're viewing data for <strong>Suffolk | nursing homes | 2021-2023</strong><a href="#" style="float:right">Change</a></p>
+  -->
   <style>
     h1,h2,h3,p{font-family: "GDS Transport", arial, sans-serif;}
     h3{font-size:1.6em}
@@ -98,15 +98,16 @@
       padding:0 5em 0 0em
     }
   </style>
-  <h2 class="govuk-heading-l">
+  <!-- <h2 class="govuk-heading-l">
     Present demand
-  </h2>
+  </h2> -->
 
   <div class="govuk-width-container">
     <div class="govuk-grid-column-one-half">
       <h3>Total beds versus occupied beds</h3>
-      <p>Source: Adult social care in England, monthly statistics: December 2024 
-      </p>
+      <p>Tags: Capacity planning</p>
+      <!-- <p>Source: Adult social care in England, monthly statistics: December 2024 
+      </p> -->
       <!-- <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key govuk-!-width-one-half">
@@ -130,13 +131,18 @@
             <p><span style="background-color:red; padding:0 0.25em; margin-right: 1em"> </span>Occupied beds</p>
       
       {% include "./beds-line-chart.html" %}
-      <p><a href="total-beds">View data</a></p>
+      <a href="total-beds"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        View data
+       </button></a>
       </div>
       <div class="govuk-grid-column-one-half">
         <h3>Suffolk nursing homes: CQC ratings</h3>
+        <p>Tags: Quality of care</p>
         <!-- <p>Source: CQC data</p> -->
       {% include "./cqc-rating.html" %}
-      <p><a href="#">View data</a></p>
+      <a href="total-beds"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        View data
+       </button></a>
       </div>
       </div>
   </div>
