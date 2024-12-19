@@ -67,7 +67,7 @@
 
 {% block content %}
 
-<!-- <a href="#" class="govuk-back-link">Back</a> -->
+<a href="#" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">
@@ -85,6 +85,7 @@
         </div>
 </fieldset>
 
+<h2>Settings</h2>
 <!-- 
   
   LA picker  
@@ -153,7 +154,7 @@
     </legend>
     <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes" checked>
         <label class="govuk-label govuk-radios__label" for="changedName">
           Line
         </label>
@@ -167,6 +168,11 @@
     </div>
   </fieldset>
 </div>
+<hr style="color:#e1e1e1">
+<h2>Total beds versus occupied beds</h2>
+<p><span style="background-color:green; padding:0 0.25em; margin-right: 1em"> </span>Total beds</p>
+            <p><span style="background-color:red; padding:0 0.25em; margin-right: 1em"> </span>Occupied beds</p>
+      
 {% include "./beds-line-chart.html" %}
 <div class="govuk-button-group">
   <a href="get-data"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
