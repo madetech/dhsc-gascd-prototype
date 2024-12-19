@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Your dashboard" %}
+{% set pageName="Total beds" %}
 
 {% block header %}
 <header class="govuk-header govuk-header--full-width-border" data-module="govuk-header">
@@ -66,143 +66,108 @@
 {% endblock %}
 
 {% block content %}
+
+<!-- <a href="#" class="govuk-back-link">Back</a> -->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">
-      Get data
+      Total beds versus occupied beds
     </h1>
-    
-    <style>
-      table {
-        margin: 2em 0;
-        text-align: left;
-        vertical-align: top;
-        border-collapse: collapse;
-        font-family: "GDS Transport", arial, sans-serif;
-      }
-      
-      .companies-table{
-        display:block;
-        min-width:600px
-      }
-      
-      caption {
-        text-align: left;
-        font-size: 1.4em;
-      }
-      
-      th,
-      td {
-        /*   border: 1px solid #666; */
-        padding: 1em;
-      }
-      
-      th {
-        background-color: #acbcd5;
-        /*     #a15dbc; */
-        color: #000;
-        font-weight: normal;
-      }
-      
-      tr{box-shadow: 0 3px 3px rgb(0 0 0 / 0.1);}
-      
-      tr:hover {
-        text-decoration: underline;
-      }
-      
-      tr:nth-child(odd) {
-        background-color: #fff;
-      }
-      
-      tr:nth-child(even) {
-        background-color: #f2f2f2;
-      } 
-      
-      #search-queries{
-        font-family: "GDS Transport", arial, sans-serif;
-        border: none;
-        margin-bottom:1.5em
-      }
-      
-      .search-queries-label{display: block;}
-      
-      .search-queries-input{padding:1em; margin-top:0.5em; width: 40em; border-radius: 5px;}
-      
-      .govuk-grid-column-one-half{
-        background: #f3f2f1;
-        border:0.5em solid white
-      }
-    </style>
-    
-    <!-- 
-    
-    Search box 
-    
-    -->
-    <!-- <fieldset id="search-queries">
-      <label class="search-queries-label" for="first-name"><h3>Search indicators</h3><p>By name, filter or dataset</p></label>
-      <input class="search-queries-input " type="text" id="first-name" name="first-name">
-    </fieldset> -->
-    
-    <!-- 
-    
-    Topics 
-    
-    -->
-    <h2>Topics</h2>
-    <p>Explore a range of indicators across different topics, or <a href="indicators">view all indicators</a>.
-    </p>
-    <div class="govuk-grid-row">
-      <a href="capacity">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Demand and capacity
-        </h2>
-        <p>
-          Track demand for adult social care services and how well those needs are being met.
-        </p>
-      </div>
-    </a>
-    <a href="#">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Care quality and improvement
-        </h2>
-        <p>
-          Focuses on evaluating service quality and efforts to improve care outcomes and standards.
-        </p>
-      </div>
-    </a>
-    <a href="#">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Finance and economy
-        </h2>
-        <p>
-          Find data on funding, spending patterns, and economic factors impacting adult social care delivery.
-        </p>
-      </div>
-      </a>
-      <a href="#">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Workforce
-        </h2>
-        <p>
-          Explore staffing trends and challenges within the adult social care sector.
-        </p>
-      </div>
-      </a>
-      <a href="#">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Market sustainability
-        </h2>
-        <p>
-          Data on the stability and resilience of the care provider market, and factors affecting long-term viability.  
-        </p>
-      </div>
-      </a>
-    </div>
-    {% endblock %}
-    
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              Show this indicator on your dashboard
+            </label>
+          </div>
+        </div>
+
+</form>
+<h2>Query details</h2>
+    <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Dataset
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <a href="#">Adult social care in England, monthly statistic</a>
+    </dd>
+    <!-- <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd> -->
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Tags
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Capacity planning
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Indicator
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Occupancy rates in care homes in the last 7 days
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Filter
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Contains "suffolk"
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date range
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Week ending 16/01/2023 to Week ending 16/12/2023
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Output 
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Line chart
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+    </dd>
+  </div>
+</dl>
+<h2>Output</h2>
+{% include "./beds-line-chart.html" %}
+<div class="govuk-button-group">
+  <a href="get-data"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Export chart
+  </button>
+</a>
+  <a href="dashboard"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Download data
+  </button></a>
+</div>
+<a href="get-data"><button type="submit" class="govuk-button" data-module="govuk-button">
+  Exit
+</button>
+</a>
+{% endblock %}
+  

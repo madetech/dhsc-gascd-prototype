@@ -67,99 +67,112 @@
 
 {% block content %}
 
-<!-- <a href="#" class="govuk-back-link">Back</a> -->
+<a href="#" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">
       Total beds versus occupied beds
     </h1>
-    <p>This is template query. Save a copy to edit it.</p>
-    <form action ="save-query">
-    <button type="submit" class="govuk-button" data-module="govuk-button">
-      Save a copy
-    </button>
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
             <label class="govuk-label govuk-checkboxes__label" for="organisation">
-              Show the output on your dashboard
+              Show this indicator on your dashboard
             </label>
           </div>
         </div>
+</fieldset>
 
-</form>
-<h2>Query details</h2>
-    <dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Dataset
-    </dt>
-    <dd class="govuk-summary-list__value">
-      <a href="#">Adult social care in England, monthly statistic</a>
-    </dd>
-    <!-- <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd> -->
+<h2>Settings</h2>
+<!-- 
+  
+  LA picker  
+
+-->
+<div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--s" for="event-name">
+      Local authority
+    </label>
+  </h1>
+  <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text" value="Suffolk">
+</div>
+
+<!-- 
+  
+  Date picker 
+
+-->
+<style>
+  .date-pickers{
+    margin-bottom:3em;
+    display: grid;
+    grid-template-columns: 35% 35%;
+  }
+</style>
+<div class="date-pickers">
+<div class="moj-datepicker" data-module="moj-date-picker">
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="date">
+      Date range: from 
+    </label>
+    <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/04/2021">
   </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Tags
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Capacity planning
-    </dd>
-    <!-- <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd> -->
+</div>
+
+<div class="moj-datepicker" data-module="moj-date-picker">
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="date">
+      Date range: to
+    </label>
+    <input class="govuk-input moj-js-datepicker-input " id="date" name="date" type="text" aria-describedby="date-hint" autocomplete="off" value="1/11/2023">
   </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Indicator
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Occupancy rates in care homes in the last 7 days
-    </dd>
-    <!-- <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd> -->
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Filter
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Contains "suffolk"
-    </dd>
-    <!-- <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd> -->
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Date range
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Week ending 16/01/2023 to Week ending 16/12/2023
-    </dd>
-    <!-- <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd> -->
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Output 
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Line chart
-    </dd>
-    <!-- <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
-    </dd> -->
-  </div>
-</dl>
+</div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+{% include ("./_lhs-filter.html") %}
+</div>
+<!-- 
+  
+  Main panel 
+
+-->
+
+  <div class="govuk-grid-column-two-thirds">
 <h2>Output</h2>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+      <h1 class="govuk-fieldset__heading">
+        Chart type
+      </h1>
+    </legend>
+    <div class="govuk-radios govuk-radios--inline govuk-radios--small" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes" checked>
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          Line
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="changedName-2">
+          Bar
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<hr style="color:#e1e1e1">
+<h2>Total beds versus occupied beds</h2>
+<p><span style="background-color:green; padding:0 0.25em; margin-right: 1em"> </span>Total beds</p>
+            <p><span style="background-color:red; padding:0 0.25em; margin-right: 1em"> </span>Occupied beds</p>
+      
 {% include "./beds-line-chart.html" %}
 <div class="govuk-button-group">
   <a href="get-data"><button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -170,6 +183,8 @@
     Download data
   </button></a>
 </div>
+<h2>Smart insights</h2>
+<p>Insights go here</p>
 <a href="get-data"><button type="submit" class="govuk-button" data-module="govuk-button">
   Exit
 </button>

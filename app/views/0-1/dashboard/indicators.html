@@ -66,143 +66,118 @@
 {% endblock %}
 
 {% block content %}
+<!-- <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="#">Get data</a>
+    </li>
+  </ol>
+</nav> -->
+<a href="#" class="govuk-back-link">Back</a>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">
-      Get data
+      All indicators
     </h1>
+  {% set queries = [
+    { date: "1 April", query:"Capacity where number of beds is greater than 5", user: "Made by you", tags:"Capacity planning", datasets: "Occupancy visiting workforce" },
+    { date: "30 March", query:"Suffolk nursing homes: CQC ratings", user: "Made by you", tags:"Quality of care", datasets: "CQC ratings" }, 
+    { date: "29 March", query:"Capacity where Number of Beds (vacant) accepting admissions is greater than 10", user: "Made by you", tags:"Capacity planning", datasets: "Occupancy visiting workforce" }, 
+    { date: "29 March", query:"Number of directly employed registered nurses absent, not COVID-19 related", user: "Template", tags:"Capacity planning", datasets: "Occupancy visiting workforce" },
+    { date: "28 March", query:"Total headcount of directly employed registered nurses", user: "Made by you", tags:"Capacity planning",datasets: "Occupancy visiting workforce" }, 
+    { date: "25 March", query:"Capacity where number of beds is greater than 5", user: "Template", tags:"Capacity planning", datasets: "Occupancy visiting workforce"},
+    { date: "25 March", query:"Capacity where number of beds is greater than 5", user: "Made by you", tags:"Capacity planning", datasets: "Occupancy visiting workforce" }, 
+    { date: "24 March", query:"Capacity where number of beds is greater than 5", user: "Made by you" , tags:"Capacity planning", datasets: "Occupancy visiting workforce"}
+  ] %}
+  <style>
     
-    <style>
-      table {
-        margin: 2em 0;
-        text-align: left;
-        vertical-align: top;
-        border-collapse: collapse;
-        font-family: "GDS Transport", arial, sans-serif;
-      }
-      
-      .companies-table{
-        display:block;
-        min-width:600px
-      }
-      
-      caption {
-        text-align: left;
-        font-size: 1.4em;
-      }
-      
-      th,
-      td {
-        /*   border: 1px solid #666; */
-        padding: 1em;
-      }
-      
-      th {
-        background-color: #acbcd5;
-        /*     #a15dbc; */
-        color: #000;
-        font-weight: normal;
-      }
-      
-      tr{box-shadow: 0 3px 3px rgb(0 0 0 / 0.1);}
-      
-      tr:hover {
-        text-decoration: underline;
-      }
-      
-      tr:nth-child(odd) {
-        background-color: #fff;
-      }
-      
-      tr:nth-child(even) {
-        background-color: #f2f2f2;
-      } 
-      
-      #search-queries{
-        font-family: "GDS Transport", arial, sans-serif;
-        border: none;
-        margin-bottom:1.5em
-      }
-      
-      .search-queries-label{display: block;}
-      
-      .search-queries-input{padding:1em; margin-top:0.5em; width: 40em; border-radius: 5px;}
-      
-      .govuk-grid-column-one-half{
-        background: #f3f2f1;
-        border:0.5em solid white
-      }
-    </style>
-    
-    <!-- 
-    
-    Search box 
-    
-    -->
-    <!-- <fieldset id="search-queries">
-      <label class="search-queries-label" for="first-name"><h3>Search indicators</h3><p>By name, filter or dataset</p></label>
-      <input class="search-queries-input " type="text" id="first-name" name="first-name">
-    </fieldset> -->
-    
-    <!-- 
-    
-    Topics 
-    
-    -->
-    <h2>Topics</h2>
-    <p>Explore a range of indicators across different topics, or <a href="indicators">view all indicators</a>.
-    </p>
-    <div class="govuk-grid-row">
-      <a href="capacity">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Demand and capacity
-        </h2>
-        <p>
-          Track demand for adult social care services and how well those needs are being met.
-        </p>
-      </div>
-    </a>
-    <a href="#">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Care quality and improvement
-        </h2>
-        <p>
-          Focuses on evaluating service quality and efforts to improve care outcomes and standards.
-        </p>
-      </div>
-    </a>
-    <a href="#">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Finance and economy
-        </h2>
-        <p>
-          Find data on funding, spending patterns, and economic factors impacting adult social care delivery.
-        </p>
-      </div>
-      </a>
-      <a href="#">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Workforce
-        </h2>
-        <p>
-          Explore staffing trends and challenges within the adult social care sector.
-        </p>
-      </div>
-      </a>
-      <a href="#">
-      <div class="govuk-grid-column-one-half">
-        <h2>
-          Market sustainability
-        </h2>
-        <p>
-          Data on the stability and resilience of the care provider market, and factors affecting long-term viability.  
-        </p>
-      </div>
-      </a>
-    </div>
-    {% endblock %}
-    
+table {
+margin: 2em 0;
+text-align: left;
+vertical-align: top;
+border-collapse: collapse;
+font-family: "GDS Transport", arial, sans-serif;
+}
+
+.companies-table{
+display:block;
+min-width:600px
+}
+
+caption {
+text-align: left;
+font-size: 1.4em;
+}
+
+th,
+td {
+/*   border: 1px solid #666; */
+padding: 1em;
+}
+
+th {
+background-color: #acbcd5;
+/*     #a15dbc; */
+color: #000;
+font-weight: normal;
+}
+
+tr{box-shadow: 0 3px 3px rgb(0 0 0 / 0.1);}
+
+tr:hover {
+text-decoration: underline;
+}
+
+tr:nth-child(odd) {
+background-color: #fff;
+}
+
+tr:nth-child(even) {
+background-color: #f2f2f2;
+} 
+
+#search-queries{
+font-family: "GDS Transport", arial, sans-serif;
+border: none;
+}
+
+.search-queries-label{display: block;}
+
+.search-queries-input{padding:1em; margin-top:0.5em; width: 40em; border-radius: 5px;}
+
+</style>
+  <fieldset id="search-queries">
+    <label class="search-queries-label" for="first-name"><h3>Search indicators</h3>By name, filter or dataset</label>
+    <input class="search-queries-input " type="text" id="first-name" name="first-name">
+  </fieldset>
+  <table class="companies-table">
+    <caption>All indicators</caption>
+    <tr>
+      <th scope="col"><i class="fa-solid fa-chevron-down"></i>Last updated</th>
+      <th scope="col">Name</th>
+      <!-- <th scope="col">Type</th> -->
+      <th scope="col">Topic</th>
+      <th scope="col">Datasets</th>
+      <th scope="col">View / edit</th>
+    </tr>
+
+
+        {% for item in queries %}
+        <tr scope="row">
+        <td>{{ item.date }}</td>
+        <td>{{ item.query }}</td>
+        <!-- <td>{{ item.user }}</td> -->
+        <td>{{ item.tags }}</td>
+        <td>{{ item.datasets }}</td>
+        <td><a href="#">Open</a></td>
+      </tr>
+        {% else %}
+          This would display if the 'item' collection were empty
+        {% endfor %}
+  </table>
+
+  {% endblock %}
+  
